@@ -1,0 +1,36 @@
+div{
+    width: 150px;
+    padding: 15px 0px;
+    font-family:sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color: blueviolet;
+    border: 1px solid blueviolet;
+    border-radius: 4px;
+    position: relative;
+    transition: color 1.5s ease;
+}
+
+
+div::before{
+    content: " ";
+    width: 100%; 
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: blueviolet;
+    border-radius: 0 0 100% 100%;
+    z-index: -1;
+    transition-property: border-radius, padding;
+    transition-timing-function: ease-in-out;
+    transition-duration: 1s;
+}
+
+div:hover::before{
+    padding: 24px 0;
+    border-radius: 0;
+}
+
+div:hover{
+    color: white;
+}
