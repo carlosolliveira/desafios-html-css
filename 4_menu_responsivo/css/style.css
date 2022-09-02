@@ -1,1 +1,105 @@
-"" 
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing: content-box;
+}
+
+label{
+    font-size: 40px;
+    /* background-color: blue; */
+    margin-right: 10px;
+}
+nav{
+    /* width: 100%; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    background-color: blueviolet;
+    /* position: relative; */
+}
+
+li{
+    display: inline;
+    list-style: none;
+    margin-right: 10px;
+}
+
+a{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    background-color: brown;
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+
+hr{
+    display: none;
+}
+
+label, input{
+    display: none;
+}
+
+@media (max-width:600px) {
+    label{
+        display: inline;
+        color: white;
+        /* font-size: 30px; */
+    }
+    ul{
+        /* display: inline; */
+        background-color: #4f1188;
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 80px;
+        /* left: 0px; */
+        right: -100%;
+    }
+
+    li{
+        /* width: 100%; */
+        text-align: center;
+        display: block;
+        /* background-color: aqua; */
+        /* padding: 30px; */
+        margin-top: 50px;
+
+    }
+    a{
+        border-radius: 0px;
+        padding: 10px;
+        background-color: transparent;
+    }
+    hr{
+        /* display: block; */
+        width: 90%;
+    }
+    a::before{
+        content: " ";
+        /* display: block; */
+        width: 5px;
+        height: 20px;
+        margin-left: -15px;
+        /* padding: 4px; */
+        background-color: blueviolet;
+        position: absolute;
+        transition: height, 1.5s, ease;
+    }
+    
+    a:hover:before{
+        margin-left: 40px;
+        background-color: red;
+        transition-property: margin-left;
+        transition-duration: 1.5s;
+        transition-timing-function: ease-in-out;
+    }
+    input:checked ~ ul{
+        left: 0px;
+    }
+
+}
